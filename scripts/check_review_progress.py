@@ -22,11 +22,20 @@ PHASE_CHECKS = {
     "review": lambda id: f"artifacts/rfe-reviews/{id}-review.md",
     "revise": lambda id: f"artifacts/rfe-reviews/{id}-review.md",
     "split": lambda id: f"artifacts/rfe-reviews/{id}-split-status.yaml",
+    "intake": None,  # multi-file check — handled in check_id
 }
 
 
 def check_id(phase, rfe_id):
     """Check one ID. Returns 'completed', 'pending', or 'error'."""
+    if phase == "intake":
+        files = [
+            f"artifacts/{rfe_id}/{rfe_id}-summary.md",
+            f"artifacts/{rfe_id}/{rfe_id}-pm-actions.md",
+            f"artifacts/{rfe_id}/{rfe_id}-submitter-feedback.md",
+        ]
+        return "completed" if all(os.path.exists(f) for f in files) else "pending"
+
     path = PHASE_CHECKS[phase](rfe_id)
     if not os.path.exists(path):
         return "pending"

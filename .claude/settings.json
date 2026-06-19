@@ -50,10 +50,16 @@
       "Bash(python3 scripts/state.py *)",
       "Bash(python3 scripts/submit.py *)",
       "Bash(python3 scripts/split_submit.py *)",
+      "Bash(python3 scripts/intake_backup.py *)",
       "Edit(artifacts/**)",
       "Edit(/tmp/rfe-assess/**)",
       "Write(artifacts/**)",
-      "Write(/tmp/rfe-assess/**)"
+      "Write(/tmp/rfe-assess/**)",
+      "mcp__atlassian__jira_get_issue",
+      "mcp__atlassian__jira_search",
+      "mcp__atlassian__jira_get_comments",
+      "mcp__atlassian__jira_add_comment",
+      "mcp__atlassian__jira_get_issue_comments"
     ],
     "additionalDirectories": [
       "/tmp/rfe-assess",
