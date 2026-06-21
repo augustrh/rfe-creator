@@ -425,7 +425,7 @@ def update_frontmatter(path, updates, schema_type):
 
 def _is_companion_file(filename):
     """Check if a filename is a companion file (comments, removed-context)."""
-    return filename.endswith(("-comments.md", "-removed-context.md")) or filename.endswith(
+    return filename.endswith(("-comments-cache.md", "-removed-context.md")) or filename.endswith(
         "-removed-context.yaml"
     )
 
@@ -437,7 +437,7 @@ def find_artifact_file(artifacts_dir, identifier):
     - RFE-NNN.md (local pre-submission)
     - RHAIRFE-NNNN.md (Jira-keyed)
 
-    Excludes companion files (-comments.md, -removed-context.md).
+    Excludes companion files (-comments-cache.md, -removed-context.md).
     Excludes archived artifacts (status: Archived in frontmatter).
 
     Args:
@@ -649,8 +649,8 @@ def rename_to_jira_key(artifacts_dir, rfe_id, jira_key):
 
             old_path = os.path.join(tasks_dir, filename)
 
-            if filename.endswith("-comments.md"):
-                new_name = f"{jira_key}-comments.md"
+            if filename.endswith("-comments-cache.md"):
+                new_name = f"{jira_key}-comments-cache.md"
             elif filename.endswith("-removed-context.yaml"):
                 new_name = f"{jira_key}-removed-context.yaml"
             elif filename.endswith("-removed-context.md"):

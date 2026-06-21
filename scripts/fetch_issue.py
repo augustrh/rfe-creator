@@ -119,7 +119,7 @@ def _fetch_all(issue_key, artifacts_dir, server, user, token):
         print(f"Error fetching comments for {issue_key}: {e}", file=sys.stderr)
         return 1
 
-    comments_path = os.path.join(tasks_dir, f"{issue_key}-comments.md")
+    comments_path = os.path.join(tasks_dir, f"{issue_key}-comments-cache.md")
     with open(comments_path, "w", encoding="utf-8") as f:
         f.write(f"# Comments: {issue_key}\n\n")
         if not comments:

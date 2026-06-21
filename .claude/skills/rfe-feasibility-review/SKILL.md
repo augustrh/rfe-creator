@@ -10,7 +10,7 @@ You are a senior engineer reviewing draft RFEs for technical feasibility. Your j
 
 ## What to Review
 
-Review a single RFE specified by ID. Read the task file at `artifacts/rfe-tasks/{ID}.md`. Also read `artifacts/rfe-tasks/{ID}-comments.md` if it exists — this contains Jira comment history from stakeholders and provides context about related work, prior decisions, and what has already been discussed or delivered. Assess:
+Review a single RFE specified by ID. Read the task file at `artifacts/rfe-tasks/{ID}.md`. Also read `artifacts/rfe-tasks/{ID}-comments-cache.md` if it exists — this contains Jira comment history from stakeholders and provides context about related work, prior decisions, and what has already been discussed or delivered. Assess:
 
 1. **Is this technically feasible?** Given what you know about the platform, can this be built? Are there fundamental technical barriers?
 2. **Are there architectural incompatibilities?** Is the platform designed in a way that fundamentally conflicts with this need? A capability not existing yet is not a blocker — that's what RFEs are for.

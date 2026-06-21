@@ -32,7 +32,7 @@ If the bootstrap fails, use a basic heuristic: each child RFE should map to a si
 
 Before decomposing, check for capabilities that are already delivered or in progress. Sources:
 - The review file may flag delivered items
-- Stakeholder comments (`artifacts/rfe-tasks/{ID}-comments.md`) often reveal what has shipped
+- Stakeholder comments (`artifacts/rfe-tasks/{ID}-comments-cache.md`) often reveal what has shipped
 - Related strategy tickets mentioned in the RFE
 
 For each acceptance criterion and scope item, mark it as:

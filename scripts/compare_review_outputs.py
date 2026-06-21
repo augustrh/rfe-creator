@@ -69,7 +69,7 @@ def compare_review(rfe_id, golden_dir, new_dir, golden_review_path):
 
     # Check companion files exist
     prefix = rfe_id
-    task_suffixes = [".md", "-comments.md"]
+    task_suffixes = [".md", "-comments-cache.md"]
     original_name = f"{prefix}.md"
 
     missing = []

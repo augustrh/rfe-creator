@@ -6,7 +6,7 @@ RFE ID: {KEY}
 
 ## Step 1: Read inputs
 
-Read `artifacts/rfe-tasks/{KEY}.md` (the RFE) and `artifacts/rfe-tasks/{KEY}-comments.md` (stakeholder comments, if it exists).
+Read `artifacts/rfe-tasks/{KEY}.md` (the RFE) and `artifacts/rfe-tasks/{KEY}-comments-cache.md` (stakeholder comments, if it exists).
 
 ## Step 2: Write the summary
 

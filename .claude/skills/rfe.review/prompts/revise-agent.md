@@ -6,7 +6,7 @@ RFE ID: {ID}
 Review file: artifacts/rfe-reviews/{ID}-review.md
 Task file: artifacts/rfe-tasks/{ID}.md
 Original file: artifacts/rfe-originals/{ID}.md
-Comments file: artifacts/rfe-tasks/{ID}-comments.md (read if it exists)
+Comments file: artifacts/rfe-tasks/{ID}-comments-cache.md (read if it exists)
 
 ## Step 1: Read Context
 

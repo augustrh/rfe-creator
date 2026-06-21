@@ -13,7 +13,7 @@ artifacts/
 
   rfe-tasks/                # Individual RFE files with YAML frontmatter
     RHAIRFE-1595.md          # Existing Jira issue (keyed by Jira key)
-    RHAIRFE-1595-comments.md # Companion: stakeholder comment history
+    RHAIRFE-1595-comments-cache.md # Companion: raw Jira comment cache (not a user output)
     RHAIRFE-1595-removed-context.yaml  # Companion: structured removed content with type classification
     RHAIRFE-1595-removed-context.md  # Legacy companion (markdown, being phased out)
     RFE-001.md               # New RFE (pre-submission, renamed on submit)
@@ -68,7 +68,7 @@ Each skill uses distinct file prefixes to avoid collisions during nested calls: 
 - **Existing Jira issues**: Use Jira key as filename and `rfe_id` (e.g., `RHAIRFE-1595.md` with `rfe_id: RHAIRFE-1595`)
 - **New RFEs (pre-submission)**: Use `RFE-NNN.md` naming with `rfe_id: RFE-NNN`
 - **On submit**: `RFE-NNN.md` files are renamed to `RHAIRFE-NNNN.md`, and `rfe_id` is updated to the Jira key
-- **Companion files**: Same prefix as main file with `-comments.md` or `-removed-context.md` suffix
+- **Companion files**: Same prefix as main file with `-comments-cache.md` or `-removed-context.md` suffix
 - **Archived RFEs**: Set `status: Archived` in frontmatter (no filename changes)
 
 ## Jira Integration
