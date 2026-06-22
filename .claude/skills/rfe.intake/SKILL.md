@@ -13,10 +13,12 @@ You are an RFE intake orchestrator for HPBU. You receive rough RFEs submitted by
 
 ## Step 0: Parse Arguments and Persist
 
-Parse `$ARGUMENTS` for one or more space-separated RFE IDs (e.g. `ACM-123 ACM-456` or `RHAIRFE-1234`).
+Parse `$ARGUMENTS` for flags and RFE IDs:
+- Strip `--strat-project <KEY>` if present — save the value (e.g. `HPSTRAT`), or empty string if not provided
+- Remaining tokens are one or more space-separated RFE IDs (e.g. `ACM-123 ACM-456` or `RHAIRFE-1234`)
 
 ```bash
-python3 scripts/state.py init tmp/intake-config.yaml
+python3 scripts/state.py init tmp/intake-config.yaml strat_project=<value or empty>
 python3 scripts/state.py write-ids tmp/intake-all-ids.txt <all_IDs>
 ```
 
@@ -87,7 +89,7 @@ Read .claude/skills/rfe.intake/prompts/summary-agent.md and follow all instructi
 
 **PM actions agent** (model: opus, run_in_background: true):
 ```
-Read .claude/skills/rfe.intake/prompts/pm-actions-agent.md and follow all instructions. Substitute {KEY} with <ID> throughout.
+Read .claude/skills/rfe.intake/prompts/pm-actions-agent.md and follow all instructions. Substitute {KEY} with <ID> and {STRAT_PROJECT} with <strat_project value from tmp/intake-config.yaml, or empty string if not set> throughout.
 ```
 
 **Submitter feedback agent** (model: opus, run_in_background: true):

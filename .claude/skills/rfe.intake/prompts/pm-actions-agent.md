@@ -107,10 +107,32 @@ A low score means the submission is thin — not necessarily that the need is un
 
 STRATs set the high-level themes and initiatives your team is investing in. Before acting on this RFE, find the STRAT it belongs to — RFEs should roll up into a STRAT, and making that link early is important for prioritisation, roadmap coherence, and showing that this request is part of a larger requirement rather than a one-off ask.
 
-Look for a STRAT that covers the same theme, capability area, or customer segment. If you find one, reference it in the RFE. If none exists, that's useful signal too — it may mean this is either genuinely new territory or the RFE is ahead of strategy.
+**If `{STRAT_PROJECT}` is set (non-empty):**
 
-> **HPBU:** check [HPSTRAT](https://redhat.atlassian.net/jira/software/c/projects/HPSTRAT/list) for the relevant theme or initiative.
-> Other orgs: check your equivalent strategy project (naming varies by team).
+Search Jira for STRATs in that project that match this RFE's theme, capability area, or customer segment. Use the Atlassian MCP tool with a query like:
+
+`project = {STRAT_PROJECT} AND issuetype = STRAT AND text ~ "<key topic from the RFE>"`
+
+Try 2–3 relevant terms from the RFE (e.g. for a ZTP cluster provisioning RFE: "cluster", "provisioning", "ZTP"). If you find matching STRATs, list them with their key and title. If none match, say so — that's useful signal too.
+
+Output exactly this format:
+```
+**STRAT project searched:** {STRAT_PROJECT}
+
+**Matches found:**
+
+- **KEY** — Title (Status) — one sentence on why this RFE rolls up here
+
+- **KEY** — Title (Status) — one sentence on why this RFE rolls up here
+
+**Recommended:** <which key(s) to link first, and why — one sentence. If none found, write "None found — this may be new territory or ahead of strategy.">
+```
+
+Keep the list to the most relevant matches (max 4). Do not add a free-text paragraph after the list — everything goes in the bullet or the Recommended line.
+
+**If `{STRAT_PROJECT}` is not set:**
+
+Advise the PM to check their team's strategy project manually. Note that the project key varies by org (some teams use a `*STRAT` naming convention). If they know their STRAT project, they can re-run with `--strat-project <KEY>` to get a direct search next time.
 
 ---
 
