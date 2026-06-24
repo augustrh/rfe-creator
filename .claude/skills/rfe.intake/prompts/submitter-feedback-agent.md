@@ -26,6 +26,8 @@ For each rubric dimension that scored below its maximum, ask 1–3 targeted ques
 - `not_a_task` → scope / what success looks like
 - `right_sized` → scope breadth
 
+Format each section as a bold heading followed by questions as a markdown bulleted list — one bullet per question. Never write multiple questions as a prose paragraph.
+
 Ask open-ended questions that draw out what the submitter already knows. Do NOT:
 - Tell them what to write
 - Suggest what the answer should be
